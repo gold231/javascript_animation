@@ -1,0 +1,159 @@
+/* used flexbox to center content */
+@import url("http://db.onlinewebfonts.com/c/67f962802e62b724cd576d7efa144b03?family=Akzidenz-Grotesk+BQ");
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*juegacon*/
+#juegacon{
+  height: 43px;
+  font-family: AkzidenzGroteskBQ;
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #36474f;
+  position: absolute;
+  bottom: 0px;
+  left:-800px;
+}
+
+/* wrapper for 800x600 screen */
+#allWrapper {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  background-size: cover;
+  z-index: -5;
+}
+
+/* animation container */
+#ballWrapper {
+  width: 100px;
+  height: 266px;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  left: 90%;
+  top: 35%;
+}
+
+/*ball*/
+#ball {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*Ball texture*/
+#ball:after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background: url("https://svgshare.com/i/DXu.svg");
+  position: absolute;
+  animation: rotate 6s 1, back 3s 2;
+  z-index: 5;
+  background-repeat: repeat;
+  background-size: cover;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+}
+
+/*Ball light*/
+#ball:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 10;
+  background-image: url("http://svgur.com/i/5C.svg");
+  background-size: 110%;
+  border-radius: 100%;
+  animation: lightop 12s 1;
+  animation-fill-mode: forwards;
+}
+
+/*Shadow on ball*/
+#ballshad {
+  background: url("http://svgur.com/i/5P.svg");
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  border-radius: 100%;
+  margin: auto;
+  display: block;
+  background-size: contain;
+  z-index: 10;
+}
+
+/*Shadow on floor*/
+#ballShadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -30px;
+  width: 50px;
+  height: 10px;
+  background-image: url("http://svgur.com/i/4V.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  background-position: center;
+}
+
+/*demo*/
+#demo {
+  width: 130px;
+  height: 50px;
+  border-radius: 3px;
+  border: solid 2px #f39853;
+  margin-left:0px;
+  font-family: AkzidenzGroteskBQ;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #f39853;
+  position: absolute;
+  bottom: 0px;
+  left:-390px;
+}
+
+
+/* Animation keyframes */
+/*Ball rotate*/
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+  	transform: rotate(360deg);
+  }
+}
+@keyframes back {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+/*Ball rotate end*/
